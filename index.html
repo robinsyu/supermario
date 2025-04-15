@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario - Play the Classic Game Online for Free | supermario.top</title>
+    <meta name="description" content="Play the original Super Mario Bros game online for free. Enjoy the classic adventure of Mario in the Mushroom Kingdom on any device.">
+    <link rel="canonical" href="https://supermario.top/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mario: {
+                            red: '#e52521',
+                            blue: '#009bdb',
+                            green: '#43b047',
+                            yellow: '#fbd000',
+                            brown: '#8b4513'
+                        }
+                    },
+                    fontFamily: {
+                        pixel: ['"Press Start 2P"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #5c94fc;
+            background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="20" height="20" fill="white" opacity="0.1"/><rect x="20" y="20" width="20" height="20" fill="white" opacity="0.1"/></svg>');
+            font-family: 'Press Start 2P', cursive;
+        }
+        .mario-box {
+            position: relative;
+            border-style: solid;
+            border-width: 4px;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(to right, #e52521, #009bdb);
+        }
+        .mario-box::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            z-index: -1;
+            background: white;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <header class="bg-mario-red p-4 shadow-lg">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+            <div class="text-center lg:text-left mb-4 lg:mb-0">
+                <h1 class="text-2xl md:text-4xl font-pixel text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                    SUPER MARIO BROS
+                </h1>
+                <p class="text-sm md:text-base text-white mt-2 font-pixel">
+                    The legendary adventure in the Mushroom Kingdom
+                </p>
+            </div>
+            <nav>
+                <ul class="flex flex-wrap justify-center gap-4 text-xs md:text-sm font-pixel">
+                    <li><a href="#game" class="text-white hover:text-mario-yellow transition">PLAY</a></li>
+                    <li><a href="#about" class="text-white hover:text-mario-yellow transition">ABOUT</a></li>
+                    <li><a href="#controls" class="text-white hover:text-mario-yellow transition">CONTROLS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main class="container mx-auto px-4 py-8">
+        <section id="game" class="mb-12">
+            <div class="mario-box bg-white rounded-lg p-4 mb-6">
+                <h2 class="text-xl md:text-2xl font-pixel text-mario-red mb-4 text-center">
+                    PLAY NOW
+                </h2>
+                <div class="relative pt-[56.25%] lg:pt-[42.85%] bg-black rounded overflow-hidden">
+                    <iframe src="https://supermario-game.com/mario-game/mario.html" 
+                            class="absolute top-0 left-0 w-full h-full border-0"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="mt-4 text-center">
+                    <button onclick="document.querySelector('iframe').contentWindow.postMessage('unpause', '*')" 
+                            class="bg-mario-green hover:bg-green-600 text-white font-pixel py-2 px-4 rounded text-sm">
+                        UNPAUSE GAME
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mb-12">
+            <div class="mario-box bg-white rounded-lg p-6">
+                <h2 class="text-xl md:text-2xl font-pixel text-mario-blue mb-6 text-center">
+                    ABOUT THE GAME
+                </h2>
+                <div class="space-y-4 text-sm leading-relaxed">
+                    <p>
+                        Super Mario Bros is the iconic platform game developed and published by Nintendo for the Nintendo Entertainment System (NES). 
+                        First released in 1985, this game revolutionized the gaming industry and became one of the most influential video games of all time.
+                    </p>
+                    <p>
+                        In this adventure, you play as Mario (or Luigi in 2-player mode), navigating through the Mushroom Kingdom to rescue Princess Toadstool 
+                        from the antagonist Bowser, the King of the Koopas.
+                    </p>
+                    <p>
+                        The game consists of eight worlds with four levels each. Mario must reach the flagpole at the end of each level to progress. 
+                        Along the way, you'll collect coins, discover power-ups hidden in "?" blocks, and defeat enemies by jumping on them.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="controls" class="mb-12">
+            <div class="mario-box bg-white rounded-lg p-6">
+                <h2 class="text-xl md:text-2xl font-pixel text-mario-green mb-6 text-center">
+                    GAME CONTROLS
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-3">
+                        <h3 class="font-pixel text-mario-red text-base">MOVEMENT</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">→</span> <span>Move right</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">←</span> <span>Move left</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">↑</span> <span>Jump</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">↓</span> <span>Duck (when Super Mario)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="font-pixel text-mario-red text-base">ACTIONS</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">B/Shift</span> <span>Run/Throw fireballs</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">A/Ctrl</span> <span>Jump</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">Start/Enter</span> <span>Pause game</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="font-pixel">Select/Space</span> <span>Select options</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="power-ups" class="mb-12">
+            <div class="mario-box bg-white rounded-lg p-6">
+                <h2 class="text-xl md:text-2xl font-pixel text-mario-yellow mb-6 text-center">
+                    POWER-UPS
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-mario-red h-16 w-16 mx-auto mb-3 rounded-lg"></div>
+                        <h3 class="font-pixel text-mario-red text-sm mb-2">SUPER MUSHROOM</h3>
+                        <p class="text-xs">Makes Mario grow and allows him to break bricks</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-mario-red h-16 w-16 mx-auto mb-3 rounded-lg"></div>
+                        <h3 class="font-pixel text-mario-red text-sm mb-2">FIRE FLOWER</h3>
+                        <p class="text-xs">Allows Mario to throw fireballs at enemies</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-mario-yellow h-16 w-16 mx-auto mb-3 rounded-lg"></div>
+                        <h3 class="font-pixel text-mario-red text-sm mb-2">SUPER STAR</h3>
+                        <p class="text-xs">Makes Mario temporarily invincible to enemies</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-mario-green h-16 w-16 mx-auto mb-3 rounded-lg"></div>
+                        <h3 class="font-pixel text-mario-red text-sm mb-2">1-UP MUSHROOM</h3>
+                        <p class="text-xs">Gives Mario an extra life</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-mario-blue p-6 text-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-center md:text-left text-xs">
+                    <p>&copy; 2025 supermario.top - All rights reserved</p>
+                    <p class="mt-2">Super Mario Bros is a trademark of Nintendo. This is a fan site.</p>
+                </div>
+                <div class="text-center md:text-right text-xs">
+                    <p>Play the classic Super Mario Bros game online</p>
+                    <p class="mt-2">Experience the nostalgia of the Mushroom Kingdom</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle responsive iframe size
+        window.addEventListener('resize', function() {
+            const iframe = document.querySelector('iframe');
+            if (iframe) {
+                const container = iframe.parentElement;
+                const ratio = window.innerWidth < 1024 ? 56.25 : 42.85;
+                container.style.paddingTop = ratio + '%';
+            }
+        });
+        
+        // Handle game focus
+        document.querySelector('iframe').addEventListener('click', function() {
+            this.focus();
+        });
+    </script>
+</body>
+</html>
